@@ -1,102 +1,101 @@
 # You Don't Know JS: Up & Going
-# Chapter 1: Into Programming
+# Часть 1: В программирование
 
-Welcome to the *You Don't Know JS* (*YDKJS*) series.
+Добро пожаловать в серию книг You Don’t Know JS (YDKJS).
 
-*Up & Going* is an introduction to several basic concepts of programming -- of course we lean toward JavaScript (often abbreviated JS) specifically -- and how to approach and understand the rest of the titles in this series. Especially if you're just getting into programming and/or JavaScript, this book will briefly explore what you need to get *up and going*.
+«Вперед и вверх» — представляет собой введение в некоторые базовые концепции в программировании. Конечно, далее мы будем изучать JavaScript (или сокращенно JS) прицельно, а также все необходимое для того чтобы подойти к пониманию следующих книг данной серии. Особенно, если вы только начитаете свой путь в программировании на JavaScript, эта книга коротко покажет вам все необходимое, чтобы встать и идти дальше.
 
-This book starts off explaining the basic principles of programming at a very high level. It's mostly intended if you are starting *YDKJS* with little to no prior programming experience, and are looking to these books to help get you started along a path to understanding programming through the lens of JavaScript.
+Книга начинается с объяснения базовых принципов программирования на верхнем уровне. Она прежде всего предназначена людям с маленьким или же вообще без опыта программирования, которые обратились к данной серии книг за помощью на старте своего пути в понимании программирования через призму JavaScript.
 
-Chapter 1 should be approached as a quick overview of the things you'll want to learn more about and practice to get *into programming*. There are also many other fantastic programming introduction resources that can help you dig into these topics further, and I encourage you to learn from them in addition to this chapter.
+Часть первая должна восприниматься как краткий обзор вещей, о которых вы бы хотели узнать подробнее, а так-же получение начальной практики в программировании. Существует множество других отличных ресурсов для новичков в JavaScript,  и я советую вам изучать и их, в дополнение к первой части нашего учебника.
 
-Once you feel comfortable with general programming basics, Chapter 2 will help guide you to a familiarity with JavaScript's flavor of programming. Chapter 2 introduces what JavaScript is about, but again, it's not a comprehensive guide -- that's what the rest of the *YDKJS* books are for!
+Как только вы почувствуете себя комфортно с основами, часть номер два поможет вам познакомиться с  программированием под соусом JavaScript. Вторая часть расскажет вам — что такое JavaScript, но напомню, это не подробное руководство — для этих вещей есть следующие книги нашей серии!
 
-If you're already fairly comfortable with JavaScript, first check out Chapter 3 as a brief glimpse of what to expect from *YDKJS*, then jump right in!
+Если вы уже чувствуете себя достаточно комфортно с JavaScript, сперва загляните в часть три данной книги, там вы найдете намек на то, что вообще ожидать от серии книг «You Dont Know JavaScript», а потом ныряйте с головой!
 
-## Code
+## КОД
 
-Let's start from the beginning.
+Начнем с самого начала.
 
-A program, often referred to as *source code* or just *code*, is a set of special instructions to tell the computer what tasks to perform. Usually code is saved in a text file, although with JavaScript you can also type code directly into a developer console in a browser, which we'll cover shortly.
+Программа, часто называемая как исходный код (исходник) или просто код — набор специальных инструкций которыми мы можем объяснить компьютеру, какую задачу мы хотим, чтобы он выполнил. Обычно, код сохраняется в текстовом файле, хотя в случае JavaScript вы также можете вводить его в консоли разработчика в вашем веб-браузере, о чем мы расскажем далее.
 
-The rules for valid format and combinations of instructions is called a *computer language*, sometimes referred to as its *syntax*, much the same as English tells you how to spell words and how to create valid sentences using words and punctuation.
+Набор правил форматирования и комбинаций таких инструкций называется языком программирования, так-же известным как синтаксис языка. Это очень близко к тому, как правила английского языка говорят вам о том как правильно писать слова и составлять из них предложения с помощью этих слов и знаков препинания.
 
-### Statements
+### ИНСТРУКЦИИ
 
-In a computer language, a group of words, numbers, and operators that performs a specific task is a *statement*. In JavaScript, a statement might look as follows:
-
-```js
-a = b * 2;
-```
-
-The characters `a` and `b` are called *variables* (see "Variables"), which are like simple boxes you can store any of your stuff in. In programs, variables hold values (like the number `42`) to be used by the program. Think of them as symbolic placeholders for the values themselves.
-
-By contrast, the `2` is just a value itself, called a *literal value*, because it stands alone without being stored in a variable.
-
-The `=` and `*` characters are *operators* (see "Operators") -- they perform actions with the values and variables such as assignment and mathematic multiplication.
-
-Most statements in JavaScript conclude with a semicolon (`;`) at the end.
-
-The statement `a = b * 2;` tells the computer, roughly, to get the current value stored in the variable `b`, multiply that value by `2`, then store the result back into another variable we call `a`.
-
-Programs are just collections of many such statements, which together describe all the steps that it takes to perform your program's purpose.
-
-### Expressions
-
-Statements are made up of one or more *expressions*. An expression is any reference to a variable or value, or a set of variable(s) and value(s) combined with operators.
-
-For example:
+В компьютерном языке, группа слов, числа и операторы, выполняющие определенную задачу — это инструкции. В JavaScript, инструкция может выглядеть например так:
 
 ```js
 a = b * 2;
 ```
 
-This statement has four expressions in it:
+Буквы a и b называются переменными (см. «Переменные»), это что-то вроде простых коробок, куда вы можете положить любые нужные вам вещи. В программах, в переменные кладут значения (например число 42), чтобы потом можно было достать его и использовать в программе. Думайте о них как о символически подписанных коробках.
 
-* `2` is a *literal value expression*
-* `b` is a *variable expression*, which means to retrieve its current value
-* `b * 2` is an *arithmetic expression*, which means to do the multiplication
-* `a = b * 2` is an *assignment expression*, which means to assign the result of the `b * 2` expression to the variable `a` (more on assignments later)
+Для контраста, число 2 это просто значение само по себе, называемое буквальным (литеральным) значением, так как оно существует само по себе и не содержится в переменной(коробке).
 
-A general expression that stands alone is also called an *expression statement*, such as the following:
+Знаки = и * являются операторами (см. «Операторы») — они производят действия со значениями и переменными, например действие присвоения(=) и математического умножения(*).
+
+Большинство инструкций в JavaScript заканчиваются точкой с запятой(;) в конце.
+
+Инструкция a = b * 2; говорит компьютеру, упрощенно — взять текущее значение, содержащееся в переменной b, умножить его на 2, затем сохранить получившийся результат в другую переменную, которая называется a.
+
+Программа — это просто коллекция множества таких предложений, описывающая шаги, которые необходимо выполнить для достижения определенного результата.
+
+### ВЫРАЖЕНИЯ
+
+Предложения состоят из одного или более выражений. Выражение — это какое-либо упоминание переменной или значения, или же набора переменных или значений, соединенных операторами.
+
+Например:
+```js
+a = b * 2;
+```
+
+В этом предложении четыре выражения:
+
+* `2` выражение литерального (буквального) значения
+* `b` выражение переменной, означающее — получить ее текущее значение
+* `b * 2` арифметическое выражение, означающее — выполнить умножение
+* `a = b * 2` выражение присвоения, означающее — присвоить результат выражения b * 2 переменной a (подробнее о присвоении чуть позже)
+
+Выражение, стоящее отдельно называется обычно выражением-инструкцией, например:
 
 ```js
 b * 2;
 ```
 
-This flavor of expression statement is not very common or useful, as generally it wouldn't have any effect on the running of the program -- it would retrieve the value of `b` and multiply it by `2`, but then wouldn't do anything with that result.
+встречается не часто, т.к. оно не особо практично и в большинстве случаем не произведет никакого эффекта на работающую программу. Оно получит значение переменной b и умножит его на 2, но потом не сделает ничего с получившимся результатом.
 
-A more common expression statement is a *call expression* statement (see "Functions"), as the entire statement is the function call expression itself:
+Более частое применение выражений-инструкций — их вызов (см. «Функции»):
 
 ```js
 alert( a );
 ```
 
-### Executing a Program
+### ВЫПОЛНЕНИЕ ПРОГРАММЫ
 
-How do those collections of programming statements tell the computer what to do? The program needs to be *executed*, also referred to as *running the program*.
+Как этот набор инструкций говорит компьютеру что необходимо сделать? Программа необходимо выполниться, или по-другому, ее необходимо запустить.
 
-Statements like `a = b * 2` are helpful for developers when reading and writing, but are not actually in a form the computer can directly understand. So a special utility on the computer (either an *interpreter* or a *compiler*) is used to translate the code you write into commands a computer can understand.
+Инструкции вроде a = b * 2 удобны для разработчиков, когда им необходимо написать или прочитать код, но это не совсем та форма, которую может прямо понимать сам компьютер. Итак, специальная программа в компьютере (интерпретатор или компилятор) используется для перевода кода, который вы написали в команды, которые может понять ваш компьютер.
 
-For some computer languages, this translation of commands is typically done from top to bottom, line by line, every time the program is run, which is usually called *interpreting* the code.
+В некоторых языках программирования этот перевод обычно осуществляется сверху вниз, строка за строкой, при каждом запуске программы. Такую операцию обычно называют интерпретированием кода.
 
-For other languages, the translation is done ahead of time, called *compiling* the code, so when the program *runs* later, what's running is actually the already compiled computer instructions ready to go.
+В других языках, перевод осуществляется один раз заранее, такая операция называется компилированием кода. Таким образом когда программу запустят позднее, компьютер получит заранее приготовленный и понятный ему набор команд, сразу готовый к запуску.
 
-It's typically asserted that JavaScript is *interpreted*, because your JavaScript source code is processed each time it's run. But that's not entirely accurate. The JavaScript engine actually *compiles* the program on the fly and then immediately runs the compiled code.
+Часто утверждают что JavaScript — интерпретируемый язык, т.к.  исходный код на JavaScript обрабатывается каждый раз при запуске. Но это не совсем верное утверждение. Движок JavaScript на самом деле компилирует программу на лету и затем немедленно исполняет полученные команды.
 
-**Note:** For more information on JavaScript compiling, see the first two chapters of the *Scope & Closures* title of this series.
+**Примечание:** более подробная информация о процессе компиляции JavaScript доступна в первых двух частях книги «Scope & Closures» данной серии.
 
-## Try It Yourself
+## ПОПРОБУЙ САМ
 
-This chapter is going to introduce each programming concept with simple snippets of code, all written in JavaScript (obviously!).
+В этом разделе мы познакомимся с каждой концепцией наглядно, используя небольшие кусочки кода, написанными на JavaScript (очевидно!).
 
-It cannot be emphasized enough: while you go through this chapter -- and you may need to spend the time to go over it several times -- you should practice each of these concepts by typing the code yourself. The easiest way to do that is to open up the developer tools console in your nearest browser (Firefox, Chrome, IE, etc.).
+Думаю, не нужно лишний раз говорить о том, что по мере чтения данного текста, вам необходимо практиковаться в каждом из данных ниже примеров, самим набирая данный код и наблюдая за его работой. Самый простой способ сделать это — открыть консоль разработчика (developer tools console) в вашем браузере (Firefox, Chrome, IE…).
 
-**Tip:** Typically, you can launch the developer console with a keyboard shortcut or from a menu item. For more detailed information about launching and using the console in your favorite browser, see "Mastering The Developer Tools Console" (http://blog.teamtreehouse.com/mastering-developer-tools-console). To type multiple lines into the console at once, use `<shift> + <enter>` to move to the next new line. Once you hit `<enter>` by itself, the console will run everything you've just typed.
+Совет: обычно вы можете запустить консоль разработчика сочетанием горячих клавиш (в Chrome Ctrl+Shift+i), или из меню браузера. Для более детальной информации о том как запустить и использовать данный инструмент можно прочитать в интернете, например «Mastering The Developer Tools Console» (http://blog.teamtreehouse.com/mastering-developer-tools-console). Чтобы набрать несколько команд за раз,  используйте <shift> + <enter> для перехода на новую строку. Если же нажать просто <enter>, консоль выполнит все, что вы до этого набрали.
 
-Let's get familiar with the process of running code in the console. First, I suggest opening up an empty tab in your browser. I prefer to do this by typing `about:blank` into the address bar. Then, make sure your developer console is open, as we just mentioned.
+Давайте познакомимся с процессом запуска кода в консоли. Сначала, я предлагаю вам открыть пустую вкладку в вашем браузере. Затем, убедитесь что консоль разработчика открыта, как было сказано ранее.
 
-Now, type this code and see how it runs:
+Теперь, введите этот код и посмотрите как он выполнится:
 
 ```js
 a = 21;
@@ -106,39 +105,39 @@ b = a * 2;
 console.log( b );
 ```
 
-Typing the preceding code into the console in Chrome should produce something like the following:
+Консоль выведет примерно следующее:
 
 <img src="fig1.png" width="500">
 
-Go on, try it. The best way to learn programming is to start coding!
+Вперед, попробуйте сами. Лучший способ научиться программированию — начать кодить!
 
-### Output
+### Вывод
 
-In the previous code snippet, we used `console.log(..)`. Briefly, let's look at what that line of code is all about.
+В прошлом примере, мы использовали console.log(..). Коротко, давайте посмотрим что означает эта строчка кода.
 
-You may have guessed, but that's exactly how we print text (aka *output* to the user) in the developer console. There are two characteristics of that statement that we should explain.
+Наверное, вы уже догадались, с помощью нее мы вывели текст в консоль. Есть два момента в данной инструкции, которые мы должны объяснить.
 
-First, the `log( b )` part is referred to as a function call (see "Functions"). What's happening is we're handing the `b` variable to that function, which asks it to take the value of `b` and print it to the console.
+Первый — часть строки log( b ) — является вызовом функции (см. «Функции»). Что происходит? Мы передаем переменную b в данную функцию, которая берет значение, содержащееся в переменной b и выводит ее в консоль.
 
-Second, the `console.` part is an object reference where the `log(..)` function is located. We cover objects and their properties in more detail in Chapter 2.
+Второй — часть console. это ссылка на объект, в котором расположена функция log(..). Мы расскажем об объектах и их содержимом более детально во второй части.
 
-Another way of creating output that you can see is to run an `alert(..)` statement. For example:
+Другой способ вывести информацию — использование инструкции alert(..). Например:
 
 ```js
 alert( b );
 ```
 
-If you run that, you'll notice that instead of printing the output to the console, it shows a popup "OK" box with the contents of the `b` variable. However, using `console.log(..)` is generally going to make learning about coding and running your programs in the console easier than using `alert(..)`, because you can output many values at once without interrupting the browser interface.
+Если вы запустите этот код, вы заметите, что вместо вывода в консоль, появится всплывающее окно с содержимым переменной b. Однако, использование console.log(..) в основном предпочтительнее, т.к. вы можете вывести множество значений за раз, не прерывая работы браузера.
 
-For this book, we'll use `console.log(..)` for output.
+В этой книге, мы будем использовать console.log(..) для вывода информации.
 
-### Input
+### Ввод
 
-While we're discussing output, you may also wonder about *input* (i.e., receiving information from the user).
+До сих пор мы говорили о выводе информации, давайте теперь поговорим о ее вводе (получении информации от пользователя).
 
-The most common way that happens is for the HTML page to show form elements (like text boxes) to a user that they can type into, and then using JS to read those values into your program's variables.
+Обычно для этого размещают элементы формы, с возможностью ввода текста в самом html коде страницы (такие элементы как textarea, input), а затем, используя JS, достают содержимое этих элементов и сохраняют их в переменных.
 
-But there's an easier way to get input for simple learning and demonstration purposes such as what you'll be doing throughout this book. Use the `prompt(..)` function:
+Но есть способ гораздо легче, который отлично подходит для нашей миссии — обучения и демонстрации работы программ.  Я говорю о функции prompt(..):
 
 ```js
 age = prompt( "Please tell me your age:" );
@@ -146,40 +145,38 @@ age = prompt( "Please tell me your age:" );
 console.log( age );
 ```
 
-As you may have guessed, the message you pass to `prompt(..)` -- in this case, `"Please tell me your age:"` -- is printed into the popup.
-
-This should look similar to the following:
+Как вы уже догадались, сообщение, которое вы передаете функции prompt(..), в данном случае «Please tell me your age:» — будет выведено на экран в сплывающем окне.
 
 <img src="fig2.png" width="500">
 
-Once you submit the input text by clicking "OK," you'll observe that the value you typed is stored in the `age` variable, which we then *output* with `console.log(..)`:
+Как только вы отправите введенный текст нажатием на «OK», вы увидите, что значение, которое вы только что ввели, сохранено в переменной age, содержимое которой затем выводится с помощью console.log(..):
 
 <img src="fig3.png" width="500">
 
-To keep things simple while we're learning basic programming concepts, the examples in this book will not require input. But now that you've seen how to use `prompt(..)`, if you want to challenge yourself you can try to use input in your explorations of the examples.
+Для простоты, пока мы обучаемся базовым вещам, в примерах этой книги не будет использоваться ввод пользователя. Но теперь, когда вы узнали как использовать prompt(..), при желании, усложните себе задачу и поизучайте работу примеров, используя данную возможность.
 
-## Operators
+## Операторы
 
-Operators are how we perform actions on variables and values. We've already seen two JavaScript operators, the `=` and the `*`.
+Операторы и как мы производим какие-либо действия над переменными и значениями. Мы уже видели два JavaScript оператора в действии, это операторы: = и *.
 
-The `*` operator performs mathematic multiplication. Simple enough, right?
+Оператор * выполняет математическое умножение. Довольно просто, правда?
 
-The `=` equals operator is used for *assignment* -- we first calculate the value on the *right-hand side* (source value) of the `=` and then put it into the variable that we specify on the *left-hand side* (target variable).
+Оператор = используется для присвоения, сначала мы вычисляем значение с правой стороны (исходное значение) оператора =, а затем кладем его в переменную, которую мы обозначили на левой стороне.
 
-**Warning:** This may seem like a strange reverse order to specify assignment. Instead of `a = 42`, some might prefer to flip the order so the source value is on the left and the target variable is on the right, like `42 -> a` (this is not valid JavaScript!). Unfortunately, the `a = 42` ordered form, and similar variations, is quite prevalent in modern programming languages. If it feels unnatural, just spend some time rehearsing that ordering in your mind to get accustomed to it.
+**Внимание:** Может показаться, что операция присвоения выполняется в обратном порядке, что выглядит немного странно. Вместо a = 42, некоторым, возможно, была бы предпочтительнее запись в обратном порядке, где исходное значение писалось бы слева, а переменная справа, например 42 -> a (это не валидный JavaScript!). К сожалению, порядок a = 42, и похожих вариаций данной операции, превалирует в современных языках программирования. Выглядит не вполне естественно, просто потратьте немного вашего времени, чтобы привыкнуть к этой концепции.
 
-Consider:
+Рассмотрим:
 
 ```js
 a = 2;
 b = a + 1;
 ```
 
-Here, we assign the `2` value to the `a` variable. Then, we get the value of the `a` variable (still `2`), add `1` to it resulting in the value `3`, then store that value in the `b` variable.
+Здесь мы присваиваем значение 2 переменной. Затем, мы берем значение переменной a (содержащей 2), прибавляя к ней затем 1, что в результате дает нам значение 3, затем сохраняем это значение в переменной b.
 
-While not technically an operator, you'll need the keyword `var` in every program, as it's the primary way you *declare* (aka *create*) *var*iables (see "Variables").
+В каждой программе вам необходимо использовать ключевое слово var (технически это не оператор), в качестве основного способа объявлять (создавать) переменные (см. «Переменные»).
 
-You should always declare the variable by name before you use it. But you only need to declare a variable once for each *scope* (see "Scope"); it can be used as many times after that as needed. For example:
+Вы должны всегда объявлять переменные перед их использованием. Но вам необходимо делать это всего один раз на каждую область видимости (Scope, см. «Scope»). Далее переменная может быть использована столько раз, сколько это необходимо. Например:
 
 ```js
 var a = 20;
@@ -190,28 +187,28 @@ a = a * 2;
 console.log( a );	// 42
 ```
 
-Here are some of the most common operators in JavaScript:
+Список наиболее часто употребляемых операторов JavaScript:
 
-* Assignment: `=` as in `a = 2`.
-* Math: `+` (addition), `-` (subtraction), `*` (multiplication), and `/` (division), as in `a * 3`.
-* Compound Assignment: `+=`, `-=`, `*=`, and `/=` are compound operators that combine a math operation with assignment, as in `a += 2` (same as `a = a + 2`).
-* Increment/Decrement: `++` (increment), `--` (decrement), as in `a++` (similar to `a = a + 1`).
-* Object Property Access: `.` as in `console.log()`.
+* Присвоение: `=` как в `a = 2`.
+* Математические: `+` (сложение), `-` (вычитание), `*` (умножение), и `/` (деление), как в `a * 3`.
+* Составное присваивание: `+=`, `-=`, `*=`, и `/=` составные операторы, которые сочетают математические операторы с присваиванием, например `a += 2` (тоже самое, что `a = a + 2`).
+* Инкремент/Декремент: `++` (Инкремент), `--` (Декремент), как в `a++` (тоже самое, что `a = a + 1`).
+* Доступ к свойствам объекта: `.` как в `console.log()`.
 
-   Objects are values that hold other values at specific named locations called properties. `obj.a` means an object value called `obj` with a property of the name `a`. Properties can alternatively be accessed as `obj["a"]`. See Chapter 2.
-* Equality: `==` (loose-equals), `===` (strict-equals), `!=` (loose not-equals), `!==` (strict not-equals), as in `a == b`.
+Объекты — это значения, которые содержат в себе другие значения в специальных именованных ячейках, называемых свойствами. obj.a означает значение ячейки с именем a объекта с названием obj. Свойства так-же доступны через запись obj[«a»]. Подробнее во второй части данной книги.
+* Равенство: `==` (нестрогое равенство), `===` (строгое равенство), `!=` (не строгое неравенство), `!==` (строгое неравенство), как в `a == b`.
 
-   See "Values & Types" and Chapter 2.
-* Comparison: `<` (less than), `>` (greater than), `<=` (less than or loose-equals), `>=` (greater than or loose-equals), as in `a <= b`.
+   Подробнее в «Values & Types» и второй части данной книги.
+* Сравнение: `<` (меньше чем), `>` (больше чем), `<=` (меньше чем или не строго равно), `>=` (больше чем или не строго равно), как в `a <= b`.
 
-   See "Values & Types" and Chapter 2.
-* Logical: `&&` (and), `||` (or), as in `a || b` that selects either `a` *or* `b`.
+   Подробнее в «Values & Types» и во второй части данной книги.
+* Логические: `&&` (и), `||` (или), как в `a || b` выбирается a *или* b.
 
-   These operators are used to express compound conditionals (see "Conditionals"), like if either `a` *or* `b` is true.
+   Эти операторы применяются, когда необходимо проверить условия (см. «Conditionals»).
 
-**Note:** For much more detail, and coverage of operators not mentioned here, see the Mozilla Developer Network (MDN)'s "Expressions and Operators" (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators).
+**Примечание:** Для более детального описания и использования операторов, не присутствующих в данном списке, смотрите документацию MDN's "Expressions and Operators" (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators).
 
-## Values & Types
+## ЗНАЧЕНИЯ И ТИПЫ
 
 If you ask an employee at a phone store how much a certain phone costs, and they say "ninety-nine, ninety-nine" (i.e., $99.99), they're giving you an actual numeric dollar figure that represents what you'll need to pay (plus taxes) to buy it. If you want to buy two of those phones, you can easily do the mental math to double that value to get $199.98 for your base cost.
 
