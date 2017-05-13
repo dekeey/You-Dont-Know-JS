@@ -210,23 +210,23 @@ console.log( a );	// 42
 
 ## ЗНАЧЕНИЯ И ТИПЫ
 
-If you ask an employee at a phone store how much a certain phone costs, and they say "ninety-nine, ninety-nine" (i.e., $99.99), they're giving you an actual numeric dollar figure that represents what you'll need to pay (plus taxes) to buy it. If you want to buy two of those phones, you can easily do the mental math to double that value to get $199.98 for your base cost.
+Если вы спросите продавца в магазине, торгующем сотовыми, сколько стоит понравившийся вам телефон и он вам ответит — «девяносто девять долларов», то вы получите конкретное числовое значение того, сколько вам необходимо заплатить за покупку данного аппарата. Если вы хотите купить два таких устройства, вы легко можете удвоить это значение в уме и получить значение равное 198 долларам.
 
-If that same employee picks up another similar phone but says it's "free" (perhaps with air quotes), they're not giving you a number, but instead another kind of representation of your expected cost ($0.00) -- the word "free."
+Если тот же самый продавец протянет вам другой такой-же телефон, но при этом скажет что его вы можете взять бесплатно, то в этом случае вы не получите цену данного устройства в числовом формате, вместо этого стоимость 0.00 долларов будет обозначена словом «бесплатно».
 
-When you later ask if the phone includes a charger, that answer could only have been either "yes" or "no."
+Когда спросите: «Идет ли зарядка в комплекте к данному гаджету?», ответ продавца может быть только «Да» или «Нет».
 
-In very similar ways, when you express values in a program, you choose different representations for those values based on what you plan to do with them.
+Очень похожим способом, когда вы используете значения в программировании, вы выбираете различное представление этих значений, в зависимости от того, что вы планируете делать с ними далее.
 
-These different representations for values are called *types* in programming terminology. JavaScript has built-in types for each of these so called *primitive* values:
+Эти различные представления значений называются «Типами». В JavaScript есть встроенные типы для каждого из этих так называемых примитивных значений:
 
-* When you need to do math, you want a `number`.
-* When you need to print a value on the screen, you need a `string` (one or more characters, words, sentences).
-* When you need to make a decision in your program, you need a `boolean` (`true` or `false`).
+* Когда вам нужно что-то посчитать, вам нужно число (number).
+* Когда вам нужно вывести значение на экран, вам нужна строка (string) — одна или более букв, слова, предложения.
+* Когда вам необходимо принять решение в вашей программе, вам нужно булевое (boolean) значение — Ложь или Правда (true or false).
 
-Values that are included directly in the source code are called *literals*. `string` literals are surrounded by double quotes `"..."` or single quotes (`'...'`) -- the only difference is stylistic preference. `number` and `boolean` literals are just presented as is (i.e., `42`, `true`, etc.).
+Значения, включенные напрямую в исходный код называются литералами. Строковые литералы обрамляются двойными «…» или одинарными (‘…’) кавычками — единственная разница между ними — вкусовые предпочтения. Числа и булевые литералы пишутся как есть(напр.: 42, true).
 
-Consider:
+Наглядно:
 
 ```js
 "I am a string";
@@ -238,13 +238,13 @@ true;
 false;
 ```
 
-Beyond `string`/`number`/`boolean` value types, it's common for programming languages to provide *arrays*, *objects*, *functions*, and more. We'll cover much more about values and types throughout this chapter and the next.
+Кроме string/number/boolean типов, в языках программирования часто присутствуют также такие типы как: массивы (arrays), объекты (objects), функции (functions), и другие. Мы подробнее поговорим о различных типах далее.
 
-### Converting Between Types
+### ПРЕОБРАЗОВАНИЕ ТИПОВ
 
-If you have a `number` but need to print it on the screen, you need to convert the value to a `string`, and in JavaScript this conversion is called "coercion." Similarly, if someone enters a series of numeric characters into a form on an ecommerce page, that's a `string`, but if you need to then use that value to do math operations, you need to *coerce* it to a `number`.
+Если у вас есть число и его необходимо вывести на экран, вам необходимо преобразовать данное значение в строку, в JavaScript это преобразование называется приведением к типу («coercion»). То есть, если кто-то ввел набор цифр в форме заказа на странице интернет магазина, это будет строкой, но если вам необходимо впоследствии выполнить какие-либо математические операции с данным значением, вам необходимо привести его к типу number (число).
 
-JavaScript provides several different facilities for forcibly coercing between *types*. For example:
+JavaScript предоставляет несколько различных способов сделать это самостоятельно. например:
 
 ```js
 var a = "42";
@@ -254,21 +254,21 @@ console.log( a );	// "42"
 console.log( b );	// 42
 ```
 
-Using `Number(..)` (a built-in function) as shown is an *explicit* coercion from any other type to the `number` type. That should be pretty straightforward.
+Использование Number(..) (встроенная функция) как в примере, является явным преобразованием из каких-либо других типов к типу number. Тут не должно возникнуть никаких сложностей в понимании.
 
-But a controversial topic is what happens when you try to compare two values that are not already of the same type, which would require *implicit* coercion.
+Но вот вам спорный момент, что случится, когда вы попытаетесь сравнить два значения различных типов, которые не были преобразованы явно?
 
-When comparing the string `"99.99"` to the number `99.99`, most people would agree they are equivalent. But they're not exactly the same, are they? It's the same value in two different representations, two different *types*. You could say they're "loosely equal," couldn't you?
+Сравнивая строку (string) «99.99» с числом (number) 99.99, большинство людей согласится — они равны. Но они не абсолютно одинаковы, верно? Это одно и тоже значение в двух различных представлениях, двух различных типов.
 
-To help you out in these common situations, JavaScript will sometimes kick in and *implicitly* coerce values to the matching types.
+Чтобы помочь вам в таких частых задачах, JavaScript сделает под капотом неявное приведение к типам (implicit coerce) данных значений, чтобы их типы совпадали.
 
-So if you use the `==` loose equals operator to make the comparison `"99.99" == 99.99`, JavaScript will convert the left-hand side `"99.99"` to its `number` equivalent `99.99`. The comparison then becomes `99.99 == 99.99`, which is of course `true`.
+Если вы сделаете неявное сравнение оператором == значений: «99.99» == 99.99, JavaScript преобразует значение слева «99.99» в его числовой эквивалент 99.99. Далее произойдет сравнение 99.99 == 99.99, которое само собой вернО.
 
-While designed to help you, implicit coercion can create confusion if you haven't taken the time to learn the rules that govern its behavior. Most JS developers never have, so the common feeling is that implicit coercion is confusing and harms programs with unexpected bugs, and should thus be avoided. It's even sometimes called a flaw in the design of the language.
+Созданное, чтобы помогать вам, неявное преобразование может создать путаницу и смутить вас, если вы не уделили чуточку вашего времени, чтобы изучить правила, которые управляют его поведением). Большинство JS разработчиков не уделяли), в связи с этим очень часто слышатся крики о том, что неявное преобразование зло, оно вносит путаницу и порождает неожиданные баги, и должно избегаться. Иногда даже слышны крики о том, что это ошибка в проектировании самого языка Javascript.
 
-However, implicit coercion is a mechanism that *can be learned*, and moreover *should be learned* by anyone wishing to take JavaScript programming seriously. Not only is it not confusing once you learn the rules, it can actually make your programs better! The effort is well worth it.
+Тем не менее, неявное преобразование — это механизм, который может быть укрощен, более того, его должен знать каждый, кто решил взяться за JavaScript всерьез. Он не только станет понятным, после изучения, но так же сделает ваш код гораздо лучше! Игра стоит свеч.
 
-**Note:** For more information on coercion, see Chapter 2 of this title and Chapter 4 of the *Types & Grammar* title of this series.
+**Примечание:** Более подробная информация о преобразовании в части 2 данной книги, а также части 4 книги Types & Grammar данной серии.
 
 ## Code Comments
 
